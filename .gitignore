@@ -1,0 +1,8 @@
+# gitignore file
+
+*.bak
+*.aux
+*.dvi
+*.log
+modelsim_beh/work
+protocol/pictures
