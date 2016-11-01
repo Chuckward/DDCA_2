@@ -14,15 +14,20 @@ library altera_mf;
 use altera_mf.all;
 
 entity MAIN is	
-	port( clk, res_n, color_change					:	in		std_logic;
-			hsync_n, vsync_n								:	out	std_logic;
-			red, green, blue								:	out	std_logic_vector(7 downto 0);
-			den, vga_res_n_out, vga_clk_out			:	out 	std_logic;
-			seg_data											:	out	std_logic_vector(7 * 2 - 1 downto 0);	-- Attention! DISPLAY_COUNT=2
-			ps2_keyboard_clk								:	inout	std_logic;									
-			ps2_keyboard_data								:	inout	std_logic;									
-			rs232_tx											:	out	std_logic;
-			rs232_rx											:	in		std_logic
+	port( clk, res_n, color_change			:	in		std_logic;
+			hsync_n, vsync_n						:	out	std_logic;
+			red, green, blue						:	out	std_logic_vector(7 downto 0);
+			den, vga_res_n_out, vga_clk_out	:	out 	std_logic;
+			seg_data									:	out	std_logic_vector(7 * 2 - 1 downto 0);	-- Attention! DISPLAY_COUNT=2
+			ps2_keyboard_clk						:	inout	std_logic;									
+			ps2_keyboard_data						:	inout	std_logic;									
+			rs232_tx									:	out	std_logic;
+			rs232_rx									:	in		std_logic;
+			
+			lcd_rs									:	out	std_logic;
+			lcd_rw									:	out	std_logic;
+			lcd_db									:	inout	std_logic_vector(7 downto 0);
+			lcd_en									:	out	std_logic
 			);
 end MAIN;
 
@@ -55,6 +60,8 @@ architecture DEFAULT of MAIN is
 	signal textmode_instruction_data	:	std_logic_vector(15 downto 0);
 	signal textmode_wr					:	std_logic;
 	signal textmode_busy					:	std_logic;
+	signal lcd_busy						:	std_logic;
+	signal screens_busy					:	std_logic;
 	signal fifo_data_out					:	std_logic_vector(DATA_WIDTH - 1 downto 0);
 	signal fifo_empty						:	std_logic;
 	signal fifo_full						:	std_logic;
@@ -91,11 +98,13 @@ architecture DEFAULT of MAIN is
 	use work.ps2_ascii_pkg.all;
 	use work.seven_segment_display_pkg.all;
 	use work.rs232_controller_pkg.all;
+	use work.lcd_controller_pkg.all;
 	
 begin
 
 	vga_clk_out <= sys_clk;
 	color_change_not <= not color_change;
+	screens_busy <= textmode_busy or lcd_busy;
 
 	pll_inst : pll
 		port map(clk, sys_clk);
@@ -122,7 +131,7 @@ begin
 	output_logic_inst : output_logic
 		port map(sys_clk, sys_res_n_sync, fifo_data_out, ascii_rd, fifo_full, fifo_empty, 
 		rs232_data, rs232_rd, rs232_full, rs232_empty, color_change_sync, 
-		textmode_instruction, textmode_instruction_data, textmode_busy, textmode_wr);
+		textmode_instruction, textmode_instruction_data, screens_busy, textmode_wr);
 	
 	textmode_controller_inst : textmode_controller_1c
 		generic map(ROW_COUNT, COLUMN_COUNT, SYS_CLK_FREQ)
@@ -136,6 +145,11 @@ begin
 	rs232_inst : rs232_controller
 		generic map(SYS_CLK_FREQ, BAUD_RATE, SYNC_STAGES, RX_FIFO_DEPTH, TX_FIFO_DEPTH)
 		port map(sys_clk, sys_res_n_sync, rs232_rx, rs232_rd, ascii, ascii_new, rs232_data, rs232_empty, rs232_full, rs232_tx);
+	
+	lcd_inst : lcd_controller
+		generic map(SYS_CLK_FREQ)
+		port map(sys_clk, sys_res_n_sync, textmode_wr, textmode_instruction, textmode_instruction_data, lcd_busy,
+					lcd_rs, lcd_rw, lcd_db, lcd_en);
 	
 end architecture DEFAULT;
 
