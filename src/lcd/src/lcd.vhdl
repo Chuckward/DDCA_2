@@ -24,7 +24,7 @@ entity lcd_controller is
 		busy			:	out std_logic;
 		rs				:	out std_logic;
 		rw				:	out std_logic;
-		db				:	out std_logic_vector(7 downto 0);
+		db				:	inout std_logic_vector(7 downto 0);
 		en				:	out std_logic
 	);
 end entity lcd_controller;
