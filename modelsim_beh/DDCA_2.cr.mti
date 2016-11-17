@@ -1,0 +1,167 @@
+{{D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd}} {0 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 16:34:17 on Nov 15,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity lcd_tb
+-- Compiling architecture beh of lcd_tb
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(49): (vcom-1136) Unknown identifier "db".
+
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(54): (vcom-1136) Unknown identifier "CLK_PERIOD".
+
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(54): Type error resolving infix expression "/" as type std.STANDARD.TIME.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(56): (vcom-1136) Unknown identifier "CLK_PERIOD".
+
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(56): Type error resolving infix expression "/" as type std.STANDARD.TIME.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(68): near "/": syntax error
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(106): (vcom-1136) Unknown identifier "send_data".
+
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(108): (vcom-1136) Unknown identifier "send_data".
+
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(110): (vcom-1136) Unknown identifier "send_data".
+
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd(111): near "process": expecting ';'
+End time: 16:34:17 on Nov 15,2016, Elapsed time: 0:00:00
+Errors: 10, Warnings: 0
+
+} {11.0 12.0 13.0 14.0 15.0 17.0 18.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/lcd_script.vhd}} {0 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/lcd_script.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 16:34:17 on Nov 15,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/lcd_script.vhd 
+-- Loading package STANDARD
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/lcd_script.vhd(1): near "#": syntax error
+End time: 16:34:17 on Nov 15,2016, Elapsed time: 0:00:00
+Errors: 1, Warnings: 0
+
+} {6.0 7.0} {}} {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/tb/lcd_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity lcd_tb
+-- Compiling architecture beh of lcd_tb
+
+} {} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd.vhdl}} {1 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd.vhdl}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 16:34:16 on Nov 15,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd.vhdl 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity lcd_controller
+End time: 16:34:16 on Nov 15,2016, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+
+} {} {}} {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd.vhdl} {2 {vcom -work work -2002 -explicit -stats=none {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd.vhdl}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity lcd_controller
+** Warning: (vcom-31) Unable to unlink file "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+Permission denied. (errno = EACCES)
+
+} {} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_pkg.vhdl}} {1 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_pkg.vhdl}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 16:34:17 on Nov 15,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_pkg.vhdl 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package lcd_controller_pkg
+-- Compiling package body lcd_controller_pkg
+-- Loading package lcd_controller_pkg
+End time: 16:34:17 on Nov 15,2016, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+
+} {} {}} {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_pkg.vhdl} {0 {vcom -work work -2002 -explicit -stats=none {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_pkg.vhdl}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 3968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/modelsim_beh/work/_lock".
+
+
+} {} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl}} {0 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 16:34:17 on Nov 15,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package lcd_controller_pkg
+-- Compiling architecture beh of lcd_controller
+-- Loading entity lcd_controller
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(34): near "rs_": Identifier may not end with an underline.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(35): near "rw_": Identifier may not end with an underline.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(37): near "db_": Identifier may not end with an underline.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(40): near "rs_": Identifier may not end with an underline.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(41): near "rw_": Identifier may not end with an underline.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(42): near "en_": Identifier may not end with an underline.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(42): near "out": syntax error
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(43): near "db_": Identifier may not end with an underline.
+** Warning: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(98): Choice in CASE statement alternative must be locally static.
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(28): Nonresolved signal 'clk_cnt_next' has multiple sources.
+  Drivers:
+    D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(152):Process init
+       Driven at:
+          D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(167)
+    D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(173):Process sync
+       Driven at:
+          D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(187)
+** Error: D:/Dropbox/2017 Winter/DDCA/Lab_2/DDCA_2/src/lcd/src/lcd_beh.vhdl(199): VHDL Compiler exiting
+End time: 16:34:17 on Nov 15,2016, Elapsed time: 0:00:00
+Errors: 10, Warnings: 1
+
+} {11.0 19.0 20.0 21.0 28.0 29.0} {}}

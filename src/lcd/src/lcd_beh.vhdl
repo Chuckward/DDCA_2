@@ -41,11 +41,19 @@ architecture beh of lcd_controller is
 		STATE_SEND_IDLE
 	);	
 	
-	signal lcd_state, lcd_state_next		: LCD_STATE_TYPE;
-	signal init_state, init_state_next 	: INIT_STATE_TYPE;
-	signal send_state, send_state_next	: SEND_STATE_TYPE;
+	type RCV_STATE_TYPE is (
+		STATE_RCV_SENDCMD,
+		STATE_RCV_DATA,
+		STATE_RCV_IDLE
+	);
+	
+	signal lcd_state, lcd_state_next				: LCD_STATE_TYPE;
+	signal init_state, init_state_next 			: INIT_STATE_TYPE;
+	signal send_state, send_state_next			: SEND_STATE_TYPE;
+	signal receive_state, receive_state_next	: RCV_STATE_TYPE;
 	signal clk_cnt, clk_cnt_next			: integer;
-	signal send_cnt, send_cnt_next		: integer;
+	signal send_cnt, send_cnt_next		: integer range 0 to 16;
+	signal recv_cnt, recv_cnt_next		: integer range 0 to 16;
 	signal busy_next							: std_logic;
 	signal lcd_busy, lcd_busy_next		: boolean;
 	signal rs_next, rw_next, en_next 	: std_logic;
@@ -54,12 +62,15 @@ architecture beh of lcd_controller is
 
 begin
 
-	next_state : process(clk, clk_cnt, send_cnt, wr, instr, instr_data, lcd_state, send_state, init_state, lcd_busy)
+	next_state : process(clk, clk_cnt, send_cnt, recv_cnt, wr, instr, instr_data, 
+								lcd_state, send_state, receive_state, init_state, lcd_busy, rs_cmd, rw_cmd, db_data, db)
 	begin
 		lcd_state_next <= lcd_state;
 		init_state_next <= init_state;
 		send_cnt_next <= send_cnt;
+		recv_cnt_next <= recv_cnt;
 		send_state_next <= send_state;
+		receive_state_next <= receive_state;
 		lcd_busy_next <= lcd_busy;
 
 		case send_state is
@@ -86,6 +97,26 @@ begin
 				end if;
 		end case;
 		
+		case receive_state is
+			when STATE_RCV_IDLE =>
+				rs_next <= '0';
+				rw_next <= '0';
+				en_next <= '0';
+				rs_cmd <= '0';
+				rw_cmd <= '0';
+			when STATE_RCV_SENDCMD =>
+				rs_next <= rs_cmd;
+				rw_next <= '1';
+			when STATE_RCV_DATA =>
+				en_next <= '1';
+				if(db(7) = '0') then
+					lcd_busy_next <= false;
+				end if;
+				recv_cnt_next <= recv_cnt + 1;
+				if (recv_cnt > 10) then
+					receive_state_next <= STATE_RCV_IDLE;
+				end if;
+		end case;		
 		
 		case lcd_state is
 			when STATE_INIT =>
@@ -187,10 +218,10 @@ begin
 	output : process(clk, send_cnt, lcd_state, send_state, init_state, rs_cmd, rw_cmd, db_data, lcd_busy)
 	begin
 		db_data_next <= db_data;
-		busy_next <= '1';
 		
 		case lcd_state is
 			when STATE_INIT =>		
+				busy_next <= '1';
 				if lcd_busy = false then	
 					case init_state is
 						when STATE_INIT_0 =>
@@ -213,6 +244,7 @@ begin
 				end if;
 				
 			when STATE_IDLE =>
+				busy_next <= '0';
 				null;						-- nothing to do
 			when STATE_SET_CHAR =>
 				
@@ -237,6 +269,7 @@ begin
 			lcd_state <= STATE_INIT;
 			send_state <= STATE_SEND_IDLE;
 			init_state <= STATE_INIT_0;
+			receive_state <= STATE_RCV_IDLE;
 			clk_cnt <= 0;
 			send_cnt <= 0;
 			busy <= '0';
@@ -247,13 +280,19 @@ begin
 			rs <= rs_next;
 			rw <= rw_next;
 			en <= en_next;
-			db <= db_next;
+			if(rw_next = '1') then		-- used as input
+				db <= "ZZZZZZZZ";
+			else 				-- used as output
+				db <= db_next;
+			end if;
 			send_cnt <= send_cnt_next;
+			recv_cnt <= recv_cnt_next;
 			db_data <= db_data_next;
 			lcd_busy <= lcd_busy_next;
 			init_state <= init_state_next;
 			send_state <= send_state_next;
 			lcd_state <= lcd_state_next;
+			receive_state <= receive_state_next;
 			if (clk_cnt < 490000) then
 				clk_cnt <= clk_cnt + 1;
 			end if;

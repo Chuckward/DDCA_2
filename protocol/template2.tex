@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper,titlepage,oneside]{article}
+
+\usepackage{dideProtocol}
+\sloppy
+
+
+\exercise{Lab Exercise II}
+
+\include{header}
+
+\begin{document}
+
+\maketitle
+
+\section*{Simulation}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  % The screenshot should span from the first command on the internal interface
+  % to the last command on the external interface
+
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot of the simulation showing the operation of the LCD
+    controller}
+\end{figure}
+
+\section*{Measurement}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  % The screenshot should span from the second instruction received on the internal
+  % interface to the command generated on the external interface
+  
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot of the SignalTap logic analyzer measurement}
+\end{figure}
+
+\begin{qa}
+  \question{How did you configure the trigger for the above measurement? If it
+    is clear from a screenshot, you may answer with a figure.} \answer{...}
+
+\end{qa}
+
+\begin{qa}
+  \question{Does the SignlTap LA provide corresponding acquisition modes for
+    each acquisition mode of the Agilent LA in the lab?
+    What are the differences?}
+  \answer{...}
+\end{qa}
+
+\begin{qa}
+  \question{What resources on the FPGA and board do you need to perform a
+    measurement with the Agilent LA and what for the SignalTap LA?}
+  \answer{...}
+\end{qa}
+
+\begin{qa}
+  \question{(For SignalTap only.) Assuming you need a very low sampling frequency
+    $f_s$ to capture a long time window.
+    How would you define a trigger that reliably stops acquisition when a glitch
+    of length $f_s^{-1}/10$ occurs on a signal (Hint: You can assume the glitch
+    is long enough to serve as a valid clock pulse for a flip flop.
+    Also, you may ignore synchronization issues.)?}
+  \answer{...}
+\end{qa}
+
+
+\clearpage
+\section*{Feedback \& Comments}
+\input{feedback}
+ 
+\end{document}

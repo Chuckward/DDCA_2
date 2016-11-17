@@ -4,5 +4,6 @@
 *.aux
 *.dvi
 *.log
+*.mti
 modelsim_beh/work
 protocol/pictures
